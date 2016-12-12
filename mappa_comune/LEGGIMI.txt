@@ -1,0 +1,1 @@
+Piazza questa cartella in un server web di file statici (es. Apache).

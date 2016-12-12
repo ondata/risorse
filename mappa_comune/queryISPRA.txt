@@ -1,0 +1,36 @@
+#############################################
+Query lanciate su endpoint linked data ISPRA
+http://dati.isprambiente.it/sparql
+#############################################
+
+####################  Comuni della regione Lombardia  #######################
+
+select distinct ?place ?name ?shape where {
+
+ ?place a <http://dati.isprambiente.it/ontology/core#GeoFeature> .
+ ?place <http://www.opengis.net/ont/gml#polygon> ?shape .
+ ?place <http://www.geonames.org/ontology#name> ?name .
+ ?place <http://www.geonames.org/ontology#parentADM1> <http://dati.isprambiente.it/id/place/lombardia> .
+
+}
+
+################# Comuni della provincia di Milano ####################
+
+select distinct ?place ?name ?shape where {
+
+ ?place a <http://dati.isprambiente.it/ontology/core#GeoFeature> .
+ ?place <http://www.opengis.net/ont/gml#polygon> ?shape .
+ ?place <http://www.geonames.org/ontology#name> ?name .
+ ?place <http://www.geonames.org/ontology#parentADM2> <http://dati.isprambiente.it/id/place/milano> .
+
+}
+
+################### Comune di Milano #######################
+
+select distinct ?p ?o where {
+
+ <http://dati.isprambiente.it/id/place/15146> ?p ?o .
+
+}
+
+###########################################
